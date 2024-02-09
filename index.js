@@ -1,5 +1,4 @@
 const jsonServer = require("json-server");
-const auth = require("json-server-auth");
 const cors = require("cors");
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
@@ -10,7 +9,6 @@ server.use(cors());
 
 // Add authentication middleware
 server.db = router.db;
-server.use(auth);
 
 // Set default middlewares (logger, static, cors, etc.)
 server.use(middlewares);
